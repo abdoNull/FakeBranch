@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SocialLoginButton extends StatelessWidget {
   final String text;
@@ -18,7 +19,7 @@ class SocialLoginButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.white,
-        minimumSize: const Size(332, 53),
+        minimumSize:   Size(332.w, 53.h),
         elevation: 0.0, // Set the elevation to 0
 
         shape: RoundedRectangleBorder(
@@ -30,14 +31,14 @@ class SocialLoginButton extends StatelessWidget {
         children: [
           Image.asset(
             imagePath,
-            height: 20,
-            width: 20,
+            height: 20.h,
+            width: 20.w,
           ),
-          const SizedBox(width: 16),
+           SizedBox(width: 16.w),
           Text(
             text,
             style: TextStyle(
-              fontSize: 12,
+              fontSize: 12.sp,
               color: Color(0xfF2B2B36),
             ),
           ),

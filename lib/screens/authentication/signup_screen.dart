@@ -1,4 +1,5 @@
-import 'package:dom_sys/shared/app_colors.dart';
+import 'package:dom_sys/screens/authentication/login_screen.dart';
+import 'package:dom_sys/screens/doctor/doctor_dashboard_screen.dart';
 import 'package:dom_sys/widgets/rounded_button.dart';
 import 'package:dom_sys/widgets/social_login_button%20.dart';
 import 'package:flutter/material.dart';
@@ -103,7 +104,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 _header(),
-                SizedBox(
+                const SizedBox(
                   height: 24,
                 ),
                 _formField(),
@@ -124,7 +125,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           }),
                       const Text.rich(
                         TextSpan(
-                          text: 'By signing up to Healthy 24 you agree all ',
+                          text: 'By signing up to Healthy f24 you agree all ',
                           children: [
                             TextSpan(
                               text: ' terms ',
@@ -144,7 +145,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SizedBox(
                   height: 24,
                 ),
-                RoundedButton(text: "Sign Up", onPressed: () {}),
+                RoundedButton(text: "Sign Up", onPressed: () {
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DashboardScreen(),
+                    ),
+                  );
+                }),
                 SizedBox(
                   height: 24,
                 ),
@@ -159,15 +167,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SizedBox(
                   height: 24,
                 ),
-                const Text.rich(
-                  TextSpan(
-                    text: 'You Already have account ?',
-                    children: [
-                      TextSpan(
-                        text: 'Sign in',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ],
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ),
+                  ),
+                  child: const Text.rich(
+                    TextSpan(
+                      text: 'You Already have account ?',
+                      children: [
+                        TextSpan(
+                          text: 'Sign in',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

@@ -1,17 +1,18 @@
-import 'package:dom_sys/shared/app_colors.dart';
+import 'package:dom_sys/screens/authentication/forget_password.dart';
 import 'package:dom_sys/widgets/rounded_button.dart';
 import 'package:dom_sys/widgets/social_login_button%20.dart';
 import 'package:flutter/material.dart';
 
+import '../../widgets/custom_text12.dart';
 import '../../widgets/custom_text14.dart';
 import '../../widgets/custom_text16.dart';
 import '../../widgets/custom_textformfield.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
 Widget _header() => Column(
@@ -20,7 +21,7 @@ Widget _header() => Column(
         Row(
           children: [
             CustomText16(
-              text: 'Sign Up to your account',
+              text: 'Welcome to healthy24',
             ),
             SizedBox(
               width: 16,
@@ -32,25 +33,13 @@ Widget _header() => Column(
           height: 24,
         ),
         CustomText14(
-          text: "Let’s Enter your data to continue use healthy 24 services ",
+          text: "Enter your account to use Healthy24 Service",
         ),
       ],
     );
 Widget _formField() => Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: const [
-        CustomText16(
-          text: 'Full name',
-        ),
-        SizedBox(
-          height: 12,
-        ),
-        CustomTextFormField(
-          hintText: 'Enter Your name here',
-        ),
-        SizedBox(
-          height: 24,
-        ),
         CustomText16(
           text: 'Email',
         ),
@@ -91,55 +80,51 @@ Widget _socialLogin() => Column(
       ],
     );
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 _header(),
-                SizedBox(
+                const SizedBox(
                   height: 24,
                 ),
                 _formField(),
                 SizedBox(
                   height: 24,
                 ),
-                FittedBox(
-                  child: Row(
-                    children: [
-                      Checkbox(
-                          checkColor: Colors.white,
-                          // fillColor: MaterialStateProperty.resolveWith(Colors.white),
-                          value: false, //isChecked,
-                          onChanged: (bool? value) {
-                            setState(() {
-                              //   isChecked = value!;
-                            });
-                          }),
-                      const Text.rich(
-                        TextSpan(
-                          text: 'By signing up to Healthy 24 you agree all ',
-                          children: [
-                            TextSpan(
-                              text: ' terms ',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            TextSpan(text: ' and '),
-                            TextSpan(
-                              text: ' conditions ',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Checkbox(
+                            checkColor: Colors.white,
+                            // fillColor: MaterialStateProperty.resolveWith(Colors.white),
+                            value: false, //isChecked,
+                            onChanged: (bool? value) {
+                              setState(() {
+                                //   isChecked = value!;
+                              });
+                            }),
+                        const CustomText12(text: "Remember me"),
+                      ],
+                    ),
+                    GestureDetector(
+                          onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ForgetPassword(),
+                    ),
                   ),
+                      child: const CustomText12(text: "Forgot password?")),
+                  ],
                 ),
                 SizedBox(
                   height: 24,
@@ -161,10 +146,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 const Text.rich(
                   TextSpan(
-                    text: 'You Already have account ?',
+                    text: 'Didn’t have an account ?',
                     children: [
                       TextSpan(
-                        text: 'Sign in',
+                        text: 'Sign Up',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ],

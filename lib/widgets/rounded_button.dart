@@ -1,5 +1,6 @@
 import 'package:dom_sys/shared/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;
@@ -14,7 +15,7 @@ class RoundedButton extends StatelessWidget {
       onPressed: () => onPressed(),
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.mainColor,
-        minimumSize: const Size(332,47),
+        minimumSize: Size(332.w, 53.h),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
