@@ -147,7 +147,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children:  [
-                      CustomText16(text: patient.fullname ?? ""),
+                      CustomText16(text: patient.fullname),
                       SizedBox(
                         height: 10.h,
                       ),

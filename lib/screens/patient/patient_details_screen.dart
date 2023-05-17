@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../shared/app_colors.dart';
 import '../../widgets/custom_text14.dart';
 import '../../widgets/custom_text16.dart';
@@ -35,8 +35,8 @@ class PatientDetailsScreen extends StatelessWidget {
             child: Column(
               children: [
                 _patientInfo(context),
-                const SizedBox(
-                  height: 15,
+                 SizedBox(
+                  height: 15.h,
                 ),
                 _patientInformation(context)
               ],
@@ -49,7 +49,7 @@ class PatientDetailsScreen extends StatelessWidget {
 
   Widget _patientInfo(BuildContext context) => Container(
         padding: const EdgeInsets.all(32.0),
-        height: MediaQuery.of(context).size.height / 2.5,
+        height: MediaQuery.of(context).size.height / 2,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
@@ -62,7 +62,7 @@ class PatientDetailsScreen extends StatelessWidget {
           children: [
             CircleAvatar(),
             SizedBox(
-              height: 10,
+              height: 10.h,
             ),
             const Text.rich(
               TextSpan(

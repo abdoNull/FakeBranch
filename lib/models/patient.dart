@@ -1,14 +1,14 @@
 class Patient {
   String fullname;
-  DateTime dateOfBirth;
+  String dateOfBirth;
   String address;
 
   Patient({required this.fullname, required this.dateOfBirth, required this.address});
 
   factory Patient.fromJson(Map<String, dynamic> json) {
     return Patient(
-      fullname: json['name'],
-      dateOfBirth:  json['dateOfBirth'],// DateTime.parse(json['dateOfBirth']),
+      fullname: json['fullname'],
+      dateOfBirth:  json['dateOfBirth'].toString(),// DateTime.parse(json['dateOfBirth']),
       address: json['address'],
     );
   }
@@ -16,7 +16,7 @@ class Patient {
   Map<String, dynamic> toJson() {
     return {
       'name': fullname,
-      'dateOfBirth': dateOfBirth.toIso8601String(),
+      'dateOfBirth': dateOfBirth, //dateOfBirth.toIso8601String(),
       'address': address,
     };
   }

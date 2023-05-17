@@ -34,7 +34,7 @@ class EditProfileScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Container(
             padding: const EdgeInsets.all(8.0),
-            height: 1000.h,
+            height: 1050.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
@@ -75,12 +75,12 @@ class EditProfileScreen extends StatelessWidget {
                   height: 20.h,
                 ),
                 _profilePic(),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: 20.h,
                 ),
                 _formField(),
-                const SizedBox(
-                  height: 10,
+                 SizedBox(
+                  height: 10.h,
                 ),
                 _buttomBtn()
               ],

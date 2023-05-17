@@ -17,8 +17,7 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen> {
   final _calendarControllerToday = AdvancedCalendarController.today();
-  final _calendarControllerCustom =
-      AdvancedCalendarController.custom(DateTime(2023, 10, 23));
+  
   final List<DateTime> events = [
     DateTime.now(),
     DateTime(2023, 10, 10),
@@ -108,8 +107,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   Widget _calendar() => Container(
         padding: const EdgeInsets.all(12.0),
-        height: 400,
-        width: 375,
+        height: 430.h,
+        width: 375.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
@@ -138,29 +137,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
               events: events,
               startWeekDay: 1,
             ),
-            Theme(
-              data: ThemeData.light().copyWith(
-                primaryColor: Colors.red,
-                highlightColor: Colors.yellow,
-                disabledColor: Colors.green,
-              ),
-              child: AdvancedCalendar(
-                controller: _calendarControllerCustom,
-                events: events,
-                weekLineHeight: 48.0,
-                startWeekDay: 1,
-                innerDot: true,
-                keepLineSize: true,
-                calendarTextStyle: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w400,
-                  height: 1.3125,
-                  letterSpacing: 0,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 10,
+       
+             SizedBox(
+              height: 10.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
